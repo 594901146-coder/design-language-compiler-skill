@@ -1,0 +1,45 @@
+interface:
+  display_name: "Design Language Compiler"
+  short_description: "Analyze a URL with browser automation and LLM reasoning to produce semantic design-language artifacts."
+  default_prompt: "Given a URL, inspect it with browser automation, normalize the evidence, use LLM reasoning to synthesize the site's design language in semantic terms, and produce report.md, report.zh.md when useful, design_language.json, scene_graph.json, component_graph.json, layout_graph.json, interaction_graph.json, and manifest.json."
+
+policy:
+  allow_implicit_invocation: true
+
+agent:
+  mission: "Convert website browser evidence into semantic design-language artifacts with LLM reasoning and without exposing implementation details."
+  primary_inputs:
+    - url
+  optional_inputs:
+    - output_directory
+    - report_language
+    - depth
+    - target_surfaces
+  required_references:
+    - references/agent-operating-contract.md
+    - references/browser-reading-workflow.md
+    - references/semantic-vocabulary.md
+    - references/schemas.md
+    - references/leakage-rules.md
+  preferred_runtime_order:
+    - host_browser_plugin
+    - project_local_playwright
+    - runtime_diagnostics
+    - user_approved_dependency_install
+  required_outputs:
+    - report.md
+    - design_language.json
+    - scene_graph.json
+    - component_graph.json
+    - layout_graph.json
+    - interaction_graph.json
+    - manifest.json
+  optional_outputs:
+    - report.zh.md
+  quality_gates:
+    - browser_evidence_source_recorded
+    - json_artifacts_parse
+    - semantic_only_outputs
+    - leakage_check_completed
+    - diagnostics_recorded
+
