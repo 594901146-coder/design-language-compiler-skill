@@ -12,11 +12,12 @@ Use this skill to turn a live URL into semantic design-language outputs.
 1. Confirm the URL, output language, depth, and target surfaces.
 2. Open the page with the best available browser runtime in the current environment.
 3. Collect desktop and mobile first-meaningful states when feasible.
-4. Probe only safe non-destructive interactions when they improve understanding.
-5. Normalize browser observations into semantic evidence.
-6. Use the LLM to synthesize the site's design philosophy, visual language, layout grammar, component semantics, interaction semantics, diagnostics, and confidence.
-7. Write the required artifacts.
-8. Validate outputs and check for forbidden leakage.
+4. Split browser evidence into four layers: Visual Layer, DOM Structure, Layout Geometry, and Interaction Signals.
+5. Probe only safe non-destructive interactions when they improve understanding.
+6. Normalize browser observations into semantic evidence.
+7. Use the LLM to synthesize the site's design philosophy, visual language, layout grammar, component semantics, interaction semantics, diagnostics, and confidence.
+8. Write the required artifacts.
+9. Validate outputs and check for forbidden leakage.
 
 ## Reading Order
 
@@ -54,4 +55,3 @@ Use browser runtimes in this order:
 - Do not expose selectors, DOM trees, raw CSS, source IDs, exact nesting, or pixel values.
 - If evidence is thin, inspect a safe secondary state before compiling.
 - If a risky action is required, stop and record diagnostics instead.
-

@@ -14,9 +14,10 @@ Convert a real website URL into semantic design-language artifacts using browser
 1. Confirm scope.
 2. Collect browser evidence.
 3. Normalize evidence.
-4. Synthesize with the LLM.
-5. Write artifacts.
-6. Validate outputs.
+4. Split evidence into Visual Layer, DOM Structure, Layout Geometry, and Interaction Signals.
+5. Synthesize with the LLM.
+6. Write artifacts.
+7. Validate outputs.
 
 ## Evidence Requirements
 
@@ -33,4 +34,3 @@ Capture at minimum:
 - report and JSON agree
 - forbidden leakage checked
 - diagnostics recorded
-

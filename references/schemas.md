@@ -6,6 +6,7 @@
 - Use stable semantic IDs.
 - Keep outputs semantic only.
 - Include diagnostics when evidence is incomplete.
+- Organize browser evidence and summaries into four layers: Visual Layer, DOM Structure, Layout Geometry, and Interaction Signals.
 
 ## Required Outputs
 
@@ -29,3 +30,13 @@
 - Design Language Summary
 - Confidence and Diagnostics
 
+## Browser Evidence Summary
+
+When recording browser observations, structure them by layer:
+
+- `visual_layer`
+- `dom_structure`
+- `layout_geometry`
+- `interaction_signals`
+
+Each layer should contain semantic notes only, not source implementation details.
